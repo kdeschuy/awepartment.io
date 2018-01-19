@@ -1,0 +1,68 @@
+{
+  "bills": {
+    "2018": {
+      "1": {
+        "closed": false,
+        "items": [
+          {
+            "closed": false,
+            "name": "Steam",
+            "description": "Outlast 2",
+            "date": "2017-11-01",
+            "cost": 16.79,
+            "paidBy": "david",
+            "participants": ["david"]
+          },
+          {
+            "closed": false,
+            "name": "Antverpia",
+            "description": "Erelidgeld",
+            "date": "2017-11-03",
+            "cost": 50,
+            "paidBy": "david",
+            "participants": ["david"]
+          },
+          {
+            "closed": false,
+            "name": "Proxy Delhaize",
+            "description": "",
+            "date": "2017-11-04",
+            "cost": 10.25,
+            "paidBy": "david",
+            "participants": ["kenny", "david"]
+          },
+          {
+            "closed": false,
+            "name": "Colruyt",
+            "description": "",
+            "date": "2017-11-07",
+            "cost": 15.35,
+            "paidBy": "kenny",
+            "participants": ["kenny", "david"]
+          },
+          {
+            "closed": false,
+            "name": "Proxy Delhaize",
+            "description": "",
+            "date": "2017-11-08",
+            "cost": 6.60,
+            "paidBy": "david",
+            "participants": ["kenny", "david"]
+          },
+          {
+            "closed": false,
+            "name": "Hema",
+            "description": "",
+            "date": "2017-11-09",
+            "cost": 11,
+            "paidBy": "david",
+            "participants": ["kenny", "david"],
+            "partials": [
+              { "cost": 3.75, "for": "david", "description": "oordopjes" }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,13 +1,9 @@
 <template functional>
   <div id="app">
+    <h1>{{ props.title }}</h1>
+    <router-view v-on="listeners"/>
   </div>
 </template>
-
-<script>
-export default {
-  name: 'App'
-}
-</script>
 
 <style lang="stylus">
 $font-stack = 'Avenir', Helvetica, Arial, sans-serif
