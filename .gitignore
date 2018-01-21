@@ -1,14 +1,3 @@
-### User-specific stuff ###
-# Cache being used by my custom assets compiler
-.cache
-
-# An error log for the build process to keep console output clean.
-build-log.txt
-
-# To be removed once testing for webfonts is done.
-src/assets/webfonts/ignore
-
-
 ### Windows ###
 # Windows thumbnail cache files
 Thumbs.db

@@ -1,3 +1,5 @@
+import Vue from 'vue'
+
 function debugKey (key, options = null) {
   const keyText = key instanceof Array ? key.join(' | ') : key
   let optionsText = ''
@@ -14,7 +16,8 @@ export default {
   computed: {
     // the $t function is a computed property to get around cached computed properties that are using $t
     $t () {
-      if (!this.$t_debugEnabled) {
+      const $debugthing = false
+      if (!$debugthing) {
         return function (key, options = {}) {
           if (!key) return key
           // i18next escape is always disabled as escaping is already managed by vue
@@ -61,7 +64,7 @@ export default {
   },
 
   created () {
-    // Vue.util.defineReactive(this, '$t_debugEnabled', this.$i18n ? !!this.$i18n.debug : false)
+    Vue.util.defineReactive(this, '$t_debugEnabled', this.$i18n ? !!this.$i18n.debug : false)
   },
 
   methods: {

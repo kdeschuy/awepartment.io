@@ -7,7 +7,6 @@ export default class VueI18n {
   constructor (options = { }) {
     const _options = Object.assign({ }, options, DEFAULT_OPTIONS)
     this.i18next = i18next.createInstance().init(_options)
-    this.i18next.changeLanguage(_options.lng) // DO NOT REMOVE OR YOU WILL DESTROY THE WORLD
   }
 
   t (key, options) {
@@ -26,8 +25,10 @@ export default class VueI18n {
     return this.i18next.language
   }
 
-  ns () {
-    return this.i18next.defaultNS
+  namespace (ns = false) {
+    return ns
+      ? this.i18next.setDefaultNamespace(ns)
+      : this.i18next.defaultNS
   }
 
   /**

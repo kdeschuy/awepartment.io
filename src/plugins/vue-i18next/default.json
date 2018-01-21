@@ -1,5 +1,6 @@
 {
   "debug": false,
+  "initImmediate": false,
   "lng": "en",
   "defaultNS": "root"
 }

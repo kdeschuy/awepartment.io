@@ -1,14 +1,13 @@
 <template>
   <div>
-    <h1 v-if="closed">This bill has been closed.</h1>
-    <h1 v-else>This bill is still ongoing!</h1>
-    <h4>{{ $t('bills:testKey') }}</h4>
+    <h1 v-if="closed">{{ $t('title') }}</h1>
+    <h1 v-else>{{ $t('title') }}</h1>
     <table class="table">
       <thead>
         <tr>
-          <td>Date</td>
-          <td>Recipient</td>
-          <td>Total</td>
+          <td>{{ $t('table.header.date') }}</td>
+          <td>{{ $t('table.header.recipient') }}</td>
+          <td>{{ $t('table.header.total') }}</td>
           <td>Kenny</td>
           <td>David</td>
           <!-- <td>Debt</td> -->
@@ -38,7 +37,7 @@
 <script>
 import data from './data-example.json'
 
-function calculateCosts ({ cost, participants, paidBy, partials = [] }) {
+function _calculateCosts ({ cost, participants, paidBy, partials = [] }) {
   // Assign the cost to each participant.
   let costs = {}
   for (const name of participants) { costs[name] = cost / participants.length }
@@ -66,23 +65,6 @@ export default {
     }
   },
 
-  created () {
-    const bundle = {
-      en: {
-        bills: {
-          'testKey': 'This is a test translation.'
-        }
-      }
-    }
-
-    this.$emit('loading', true)
-    this.$i18n.load('en', 'bills', bundle)
-      .then(() => {
-        this.$emit('loading', false)
-        this.$forceUpdate()
-      })
-  },
-
   computed: {
     closed () {
       return this.data.bills['2018']['1'].closed
@@ -90,7 +72,7 @@ export default {
 
     bills () {
       return this.data.bills['2018']['1'].items
-        .map(item => Object.assign({}, item, calculateCosts(item)))
+        .map(item => Object.assign({}, item, _calculateCosts(item)))
     },
 
     total () {
